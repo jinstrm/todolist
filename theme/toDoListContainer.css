@@ -1,0 +1,33 @@
+.toDoListContainer {
+    display: flex;
+    flex-direction: column;
+    min-width: 700px;
+    max-width: 700px;
+}
+
+
+@media screen and (max-width: 700px){
+    .toDoListContainer {
+        min-width: 400px;
+        max-width: 400px;
+    }
+}
+
+.toToListHeader {
+    display: flex;
+    justify-content: space-between;
+}
+
+.toToListHeader, .toToListHeader input {
+    background-color: rgb(60, 23, 66);
+    color: rgb(243, 255, 185)
+}
+
+.toDoListBody {
+    display: flex;
+    flex-direction: column;
+}
+
+.createElement {
+    display: flex;
+}

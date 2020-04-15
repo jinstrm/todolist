@@ -1,0 +1,55 @@
+.listElem {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    position: relative;
+    min-height: 40px;
+}
+
+.listElem input[type="checkbox"] {
+    align-self: flex-start;
+    margin: 0px 15px 0 15px;
+    height: 18px;
+}
+
+.listElem input[type="text"], .listElem p{
+    flex: 6;
+}
+
+.listElem p {
+    margin: 0px 0px 0px 0px;
+}
+
+.removeElement {
+    background-image: url("./trash-bin-doodle.png");
+    background-color: white;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position:center;
+    border-style: none;
+    height: 25px;
+    width: 25px;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+
+
+.elementControls {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 50px;
+    align-self: flex-start;
+}
+
+.timeInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.timeInfo span {
+    text-align: right;
+}
+

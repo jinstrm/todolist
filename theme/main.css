@@ -1,0 +1,35 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hidden {
+    display: none;
+}
+
+
+
+
+.listEntry button {
+    font-size: 18px;
+    padding: 3px 3px;
+    margin: 0 0 0 0;
+    position: absolute;
+    border-style: none;
+    border-radius: 2px;
+    bottom: 7px;
+    right: 7px;
+    background-color: inherit;
+    
+    width:20px;
+    height: 20px;
+    background-image: url("https://icon-library.net//images/icon-remove/icon-remove-0.jpg");
+    background-size: auto 70%;
+    background-repeat: no-repeat;
+    background-position:center;
+}
+
+.listEntry button:hover {
+    background-color: rgb(86, 227, 159);
+}
