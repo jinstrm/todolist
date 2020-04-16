@@ -5,12 +5,12 @@ const storageItem = "toDoListState"
 
 export function storeState(state) {
 	localStorage.removeItem(storageItem)
-	const toStore = State.toPlaneObject(state)
+	const toStore = State.toPlainObject(state)
 
 	localStorage.setItem(storageItem, JSON.stringify(toStore))
 }
 
 export function loadState() {
 	const state = JSON.parse(localStorage.getItem(storageItem))
-	return State.fromPlaneObject(state)
+	return State.fromPlainObject(state)
 }

@@ -79,7 +79,7 @@ export class Entry {
 
 	}
 
-	static toPlaneObject(entry) {
+	static toPlainObject(entry) {
 		return {
 			content: entry.content,
 			creationTime: entry.creationTime,
@@ -89,7 +89,7 @@ export class Entry {
 		}
 	}
 
-	static fromPlaneObject(entry) {
+	static fromPlainObject(entry) {
 		const newEntry = new Entry(entry.content, true)
 		newEntry.creationTime = new Date(entry.creationTime)
 		newEntry.completionTime = new Date(entry.completionTime)
@@ -167,18 +167,18 @@ class List {
 		}
 	}
 
-	static toPlaneObject(list) {
+	static toPlainObject(list) {
 		return {
 			id: list.id,
 			name: list.name,
-			entries: list.entries.map(e => Entry.toPlaneObject(e)),
+			entries: list.entries.map(e => Entry.toPlainObject(e)),
 			sortStrategy: list.sortStrategy
 		}
 	}
 
-	static fromPlaneObject(list, sortingStrategies) {
+	static fromPlainObject(list, sortingStrategies) {
 		const newList = new List(list.id, list.name, sortingStrategies, true)
-		newList.entries = list.entries.map(e => Entry.fromPlaneObject(e))
+		newList.entries = list.entries.map(e => Entry.fromPlainObject(e))
 
 		const strategyCorrect = sortingStrategies.find( strategy => strategy.id === list.sortingStrategy)
 		if (strategyCorrect) {
@@ -252,18 +252,18 @@ export class State {
 		}
 	}
 
-	static toPlaneObject(state) {
+	static toPlainObject(state) {
 		return {
-			openList: List.toPlaneObject(state.openList),
-			doneList: List.toPlaneObject(state.doneList)
+			openList: List.toPlainObject(state.openList),
+			doneList: List.toPlainObject(state.doneList)
 		}
 	}
 
-	static fromPlaneObject(state) {
+	static fromPlainObject(state) {
 		const newState = new State(true)
 		if (state) {
-			newState.openList.entries = state.openList.entries.map(e => Entry.fromPlaneObject(e))
-			newState.doneList.entries = state.doneList.entries.map(e => Entry.fromPlaneObject(e))
+			newState.openList.entries = state.openList.entries.map(e => Entry.fromPlainObject(e))
+			newState.doneList.entries = state.doneList.entries.map(e => Entry.fromPlainObject(e))
 			return newState
 		}
 		else return new State()
